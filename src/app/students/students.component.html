@@ -1,1 +1,53 @@
-<p>students works!</p>
+<div class="w-100 d-flex flex-column flex-md-row gap-4">
+    <form class="d-flex flex-column gap-4 p-4 shadow rounded-4 w-100 w-md-50 bg-white" #f="ngForm" (ngSubmit)="addStudent(f)" novalidate>
+
+        <h1 class="ms-auto me-auto">Calculadora de Média</h1>
+
+        <div>
+            <label class="form-label">RA:</label>
+            <div class="input-group">
+                <input type="text" [(ngModel)]="ra" [ngModelOptions]="{standalone: true}" class="form-control" required>
+            </div>
+        </div>
+
+        <div>
+            <label class="form-label">Nome:</label>
+            <div class="input-group">
+                <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" class="form-control"
+                    required>
+            </div>
+        </div>
+
+        <div>
+            <label class="form-label">Email:</label>
+            <div class="input-group">
+                <input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control"
+                    required>
+            </div>
+        </div>
+
+        <div>
+            <label class="form-label">Telefone:</label>
+            <div class="input-group">
+                <input type="text" [(ngModel)]="phone" [ngModelOptions]="{standalone: true}" class="form-control"
+                    required>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success">Cadastrar Aluno</button>
+    </form>
+
+    <div class="d-flex flex-column p-4 shadow rounded-4 w-100 w-md-50 bg-white">
+        <h1 class="ms-auto me-auto mb-4">Alunos matriculados</h1>
+
+        <div class="border rounded-4 w-100 px-3 py-2 mb-2" *ngFor="let student of students">
+            <h3>{{ student.name }} - {{ student.ra }}</h3>
+            <p class="mb-0">
+                <span class="fw-bold">Email:</span> {{ student.email }}
+            </p>
+            <p class="mb-0">
+                <span class="fw-bold">Telefone:</span> {{ student.phone }}
+            </p>
+        </div>
+    </div>
+</div>
