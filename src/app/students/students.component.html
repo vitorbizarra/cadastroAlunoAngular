@@ -1,7 +1,7 @@
 <div class="w-100 d-flex flex-column flex-md-row gap-4">
     <form class="d-flex flex-column gap-4 p-4 shadow rounded-4 w-100 w-md-50 bg-white" #f="ngForm" (ngSubmit)="addStudent(f)" novalidate>
 
-        <h1 class="ms-auto me-auto">Calculadora de Média</h1>
+        <h1 class="ms-auto me-auto">Cadastro de Alunos</h1>
 
         <div>
             <label class="form-label">RA:</label>
@@ -38,7 +38,7 @@
     </form>
 
     <div class="d-flex flex-column p-4 shadow rounded-4 w-100 w-md-50 bg-white">
-        <h1 class="ms-auto me-auto mb-4">Alunos matriculados</h1>
+        <h1 class="ms-auto me-auto mb-4">Alunos Matriculados</h1>
 
         <div class="border rounded-4 w-100 px-3 py-2 mb-2" *ngFor="let student of students">
             <h3>{{ student.name }} - {{ student.ra }}</h3>
